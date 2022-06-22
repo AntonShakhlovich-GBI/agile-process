@@ -23,7 +23,7 @@ email: anton.shakhlovich@groupbyinc.com
 description: >- # this means to ignore newlines until "baseurl:"
   Helps newcomers to understand how to deliver S4R product in agile manner.
 domain: antonshakhlovich-gbi.github.io
-baseurl: "/agile-process" # the subpath of your site, e.g. /blog
+baseurl: "/agile-process/" # the subpath of your site, e.g. /blog
 url: "https://antonshakhlovich-gbi.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  antonshakhlovich-gbi
 
