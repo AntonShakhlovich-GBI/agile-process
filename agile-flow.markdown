@@ -80,25 +80,19 @@ graph TB
   
     If_Verified -.->|No|InProgress
   
-    style Draft fill:#b2b2b2
-    style Design fill:#fbbc3d
-    style NeedInfo fill:#fbbc3d
+   
+    classDef draft fill:#b2b2b2
+    class Draft draft
+
+    classDef notReadyStatus fill:#fbbc3d
+    class Design,NeedInfo notReadyStatus
     
-    style A_Estimate fill:#f56342, stroke-width: 4px, stroke: black
-    style A_Clarify fill:#f56342, stroke-width: 4px, stroke: black
-    style A_Assign_PM fill:#f56342, stroke-width: 4px, stroke: black
-    style A_Set_Reqirements fill:#f56342, stroke-width: 4px, stroke: black
-    style A_Label fill:#f56342, stroke-width: 4px, stroke: black
-    style A_Assign_PM_Release fill:#f56342, stroke-width: 4px, stroke: black
-    style A_Bug_Sprint fill:#f56342, stroke-width: 4px, stroke: black
-    style A_Bug_Project fill:#f56342, stroke-width: 4px, stroke: black
-    style A_Plan fill:#f56342, stroke-width: 4px, stroke: black
-    
-    style Backlog fill:#426cf5
-    style InProgress fill:#426cf5
-    style CodeReview fill:#426cf5
-    style InQA fill:#426cf5
+    classDef action fill:#f56342, stroke-width: 4px, stroke: black
+    class A_Estimate,A_Clarify,A_Assign_PM,A_Set_Reqirements,A_Label,A_Assign_PM_Release,A_Bug_Sprint,A_Bug_Project,A_Plan action
+
+    classDef development fill:#426cf5
+    class Backlog,InProgress,CodeReview,InQA development
   
-    style ReadyToRelease fill:#28ab00
-    style Closed fill:#28ab00
+    classDef closed fill:#28ab00
+    class ReadyToRelease,Closed closed
 ```
