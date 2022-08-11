@@ -1,18 +1,21 @@
 ---
 layout: page
-title: Agile Flow
-permalink: /agile-flow/
+title: User Story Flow
+permalink: /user-story-flow/
 ---
 ```mermaid!
 graph TB
+    PM_Creates_Draft[[PM Creates User Story Draft]]
+    PM_Creates_Draft-->Draft
     subgraph "Requirements Elaboration"
       Draft(Open)
       Design(In Design)
-      NeedInfo(Need More Information)
+      NeedInfo(Label with 'Need More Information')
       A_Clarify[[Clarify Requirements]]
+      RemoveLabel[[Remove Need More Information Label]] 
       A_Assign_PM[[Assign to PM]]
       A_Set_Reqirements[[Set Initial Requirements and AC]]
-      A_Label[[Label with Team Label]]
+      A_Label[[Label with Team Label: CC or CT]]
   
       Draft--> A_Set_Reqirements
       A_Set_Reqirements --> A_Label
@@ -72,10 +75,16 @@ graph TB
       If_Verified{Verification Passed?}
       Closed(Closed)
       A_Assign_PM_Release[[Assign To PM]]
+      A_Assign_Reporter[[Assign To Reporter]]
+      A_Reporter_Resolution[[Reporter set Resolution]]
+      Resolved(Resolved)
   
       ReadyToRelease --> A_Assign_PM_Release
       A_Assign_PM_Release --> If_Verified
       If_Verified -->|Yes|Closed
+      Closed --> A_Assign_Reporter
+      A_Assign_Reporter --> A_Reporter_Resolution
+      A_Reporter_Resolution --> Resolved
     end
   
     If_Verified -.->|No|InProgress
@@ -85,14 +94,14 @@ graph TB
     class Draft draft
 
     classDef notReadyStatus fill:#fbbc3d
-    class Design,NeedInfo notReadyStatus
+    class Design notReadyStatus
     
     classDef action fill:#f56342, stroke-width: 4px, stroke: black
-    class A_Estimate,A_Clarify,A_Assign_PM,A_Set_Reqirements,A_Label,A_Assign_PM_Release,A_Bug_Sprint,A_Bug_Project,A_Plan action
+    class RemoveLabel,NeedInfo,PM_Creates_Draft,A_Estimate,A_Clarify,A_Assign_PM,A_Set_Reqirements,A_Label,A_Assign_PM_Release,A_Bug_Sprint,A_Bug_Project,A_Plan action,A_Assign_Reporter
 
     classDef development fill:#426cf5
     class Backlog,InProgress,CodeReview,InQA development
   
     classDef closed fill:#28ab00
-    class ReadyToRelease,Closed closed
+    class ReadyToRelease,Closed,Resolved closed
 ```
