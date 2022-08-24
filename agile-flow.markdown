@@ -5,7 +5,7 @@ permalink: /user-story-flow/
 ---
 ```mermaid!
 graph TB
-    PM_Creates_Draft[[PM Creates User Story Draft]]
+    PM_Creates_Draft[[PM Creates User Story]]
     PM_Creates_Draft-->Draft
     subgraph "Requirements Elaboration"
       Draft(Open)
@@ -97,7 +97,7 @@ graph TB
     class Design notReadyStatus
     
     classDef action fill:#f56342, stroke-width: 4px, stroke: black
-    class RemoveLabel,NeedInfo,PM_Creates_Draft,A_Estimate,A_Clarify,A_Assign_PM,A_Set_Reqirements,A_Label,A_Assign_PM_Release,A_Bug_Sprint,A_Bug_Project,A_Plan action,A_Assign_Reporter
+    class RemoveLabel,NeedInfo,PM_Creates_Draft,A_Estimate,A_Clarify,A_Assign_PM,A_Set_Reqirements,A_Label,A_Assign_PM_Release,A_Bug_Sprint,A_Bug_Project,A_Plan,A_Assign_Reporter,A_Reporter_Resolution action
 
     classDef development fill:#426cf5
     class Backlog,InProgress,CodeReview,InQA development
